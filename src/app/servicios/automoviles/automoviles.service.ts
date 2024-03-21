@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Automovil } from './automoviles.interface';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutomovilesService {
+  
+  // baseUrl: String = 'https://epico.gob.ec/vehiculo/pulic/api';
+  // httpOptions = { headers: new HttpHeaders({'Content-type':'application/json' })}private http:HttpClient
+
+constructor() {}
+
 
 private autos: Automovil[] = [
   {
@@ -68,7 +75,7 @@ private autos: Automovil[] = [
 
 autosSubject = new BehaviorSubject(this.autos);
 
-constructor() { }
+
 
 getAllAutos(){
   return this.autosSubject.asObservable();

@@ -37,4 +37,8 @@ autosFiltrados: Automovil[] = [];
     this.muestraImagen = !this.muestraImagen;
   }
 
+  deleteAutoById(id:number){
+this.autosService.deleteAutoById(id)
+  }
+
 }

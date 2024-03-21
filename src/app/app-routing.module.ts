@@ -17,7 +17,7 @@ const routes: Routes =
     component: ListaAutosComponent
   },
   {
-    path:'auto/:id',
+    path:'automoviles/:id',
     component: AutosDetailComponent
   },
   {

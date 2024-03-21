@@ -4,8 +4,11 @@
 
   </div>
   <div class="col-md-10">
-    <input type="text" placeholder="codigo/marca/modelo">
+    <input type="text" placeholder="codigo/marca/modelo" >
   </div>
+</div>
+<div class="nuevoauto">
+  <button class="btn btn-secondary">Nuevo Automovil</button>
 </div>
 
 <div class="table-responsive">
@@ -32,7 +35,7 @@
           <img [src]="auto.img" *ngIf="muestraImagen">
         </td>
         <th class="text-center">
-          <a routerLink="/auto/{{auto.codigo}}">{{auto.codigo}}</a>
+          <a routerLink="/automoviles/{{auto.codigo}}">{{auto.codigo}}</a>
         </th>
         <td class="text-justify">{{auto.marca}}</td>
         <td class="text-center">{{auto.modelo | lowercase}}</td>
@@ -43,7 +46,7 @@
         <td class="text-center">{{auto.calificacion}}</td>
         <td>
           <button class="btn btn-secondary">Editar</button>
-          <button class="btn btn-dark">Eliminar</button>
+          <button class="btn btn-dark" (click)="deleteAutoById(auto.codigo)">Eliminar</button>
         </td>
 
 
