@@ -81,7 +81,7 @@ getAllAutos(){
   return this.autosSubject.asObservable();
 }
 
-getAutoById(id:number){
+getAutoById(id:number): Automovil | undefined{
   return this.autos.find((auto)=>auto.codigo == id);
 
 }
@@ -95,6 +95,6 @@ addAuto(auto:Automovil){
   this.autos.push(auto);
   this.autosSubject.next(this.autos);
 }
-
+updateAuto(){}
 
 }

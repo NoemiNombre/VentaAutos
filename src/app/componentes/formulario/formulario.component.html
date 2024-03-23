@@ -1,0 +1,44 @@
+<div  class="card">
+  <div class="container bg-dark text-white">
+    <h1>Información de Nuevo Automovil</h1>
+  </div>
+  <div></div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="staticCodigo" name="codigo" [(ngModel)]="automovil.codigo">
+    <label for="staticCodigo">Código</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo" name="marca" [(ngModel)]="automovil.marca">
+    <label for="staticCodigo">Marca</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo"  name="modelo" [(ngModel)]="automovil.modelo" >
+    <label for="staticCodigo">Modelo</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo"  [(ngModel)]="automovil.color">
+    <label for="staticCodigo">Color</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo"  [(ngModel)]="automovil.kilometraje">
+    <label for="staticCodigo">Kilometraje</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo"  [(ngModel)]="automovil.precio">
+    <label for="staticCodigo">Precio</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo" [(ngModel)]="automovil.calificacion">
+    <label for="staticCodigo">Calificación</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="staticCodigo" [(ngModel)]="automovil.img">
+    <label for="staticCodigo">Imágen Automovil</label>
+  </div>
+  <div class="guardar">
+    <button class="btn btn-dark" (click)="guardar()">Guardar</button>
+  </div>
+  <div class="regresar">
+    <a class="btn btn-secondary" [routerLink]="['']" >Regresar</a>
+  </div>
+</div> 
