@@ -12,6 +12,11 @@ import { HomepageComponent } from './paginas/homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
 import { CommonModule } from '@angular/common';
+import { EstrellasComponent } from './componentes/estrellas/estrellas.component';
+import { RouterModule } from '@angular/router';
+import { EditarAutoComponent } from './componentes/editar-auto/editar-auto.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { UserInterceptorService } from './interceptores/UserInterceptor.service';
 
 @NgModule({
   declarations: [
@@ -21,22 +26,37 @@ import { CommonModule } from '@angular/common';
     AutosDetailComponent,
     ListaAutosComponent,
     HomepageComponent,
-    FormularioComponent
+    FormularioComponent,
+    EstrellasComponent,
+    EditarAutoComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AutomovilesModule,
-    ReactiveFormsModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
-
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
+    
+   
   ],
   exports: [
-FormularioComponent
+FormularioComponent,
+EstrellasComponent,
+
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, 
+      useClass: UserInterceptorService, 
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

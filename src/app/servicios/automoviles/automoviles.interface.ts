@@ -1,12 +1,12 @@
-export interface Automovil {
+export interface Vehiculo {
 
-    codigo: number;
+    codigo: string;
     marca?: string;
     modelo?: string;
+    foto: string;
     anio: number;
-    color?: string;
     kilometraje?: number;
     precio?: number; 
     calificacion: number;
-    img: string;
+    
 }

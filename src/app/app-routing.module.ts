@@ -6,6 +6,7 @@ import { AutosDetailComponent } from './componentes/autosDetail/autosDetail.comp
 import { NotFoundComponent } from './componentes/notFound/notFound.component';
 import { HomepageComponent } from './paginas/homepage/homepage.component';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
+import { EditarAutoComponent } from './componentes/editar-auto/editar-auto.component';
 
 const routes: Routes =
   [
@@ -14,15 +15,19 @@ const routes: Routes =
       component: HomepageComponent
     },
     {
-      path: 'automoviles',
+      path: 'vehiculo',
       component: ListaAutosComponent
     },
     {
-      path: 'automoviles/nuevo',
+      path: 'vehiculo/nuevo',
       component: FormularioComponent
     },
     {
-      path: 'automoviles/:id',
+      path:'vehiculo/editar',
+      component: EditarAutoComponent
+    },
+    {
+      path: 'vehiculo/:codigo',
       component: AutosDetailComponent
     },
     

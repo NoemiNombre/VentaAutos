@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Automovil } from '../../servicios/automoviles/automoviles.interface';
+import { Vehiculo} from '../../servicios/automoviles/automoviles.interface';
 import { AutomovilesService } from '../../servicios/automoviles/automoviles.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-formulario',
@@ -10,34 +13,57 @@ import { AutomovilesService } from '../../servicios/automoviles/automoviles.serv
 })
 export class FormularioComponent implements OnInit {
 
-automovil: Automovil
+  // automovil: Automovil
+  formulario: FormGroup 
 
   constructor(
-    private route: ActivatedRoute,
-    private autoService: AutomovilesService
-    ) { 
-this.automovil = {
-    codigo: 0,
-    marca: '',
-    modelo: '',
-    anio: 0,
-    color: '',
-    kilometraje: 0,
-    precio: 0, 
-    calificacion: 0,
-    img: '',
+    private autoService: AutomovilesService,
+    private fb: FormBuilder,
+    private activeRoute:ActivatedRoute
+  ) {
+    this.formulario = this.fb.group({
+      "codigo": ['', [Validators.required]],
+     "marca": ['', [Validators.required]],
+      "modelo": ['', [Validators.required]],
+      "foto": [''],
+      "anio": ['', [Validators.required]],
+      "kilometraje": [],
+      "precio": [],
+      "calificacion": ['', [Validators.required]],
+      
+    })
 
-}
-  }
-
-  ngOnInit():void {
-  
-  }
-
-  guardar(){
-    this.autoService.addAuto(this.automovil); 
-    console.log("Guardado con exito");
     
   }
 
+  ngOnInit(): void {
+
+  }
+
+  guardar() {
+    if (this.formulario.valid) {
+      this.autoService.insertVehiculo({ ...this.formulario.value }).subscribe(
+        respuesta => {
+          if (respuesta.codigo == '1') {
+            Swal.fire({
+              title: "Mensaje",
+              text: "Autmovil Registrado con Exito",
+              icon: "success"
+            });
+          }
+        }
+      );
+    } else {
+      Swal.fire({
+        title: "Mensaje",
+        text: "Faltan llenar campos",
+        icon: "error"
+      });
+    }
+  }
+
+
+
 }
+
+
