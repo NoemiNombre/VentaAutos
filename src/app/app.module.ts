@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { EditarAutoComponent } from './componentes/editar-auto/editar-auto.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserInterceptorService } from './interceptores/UserInterceptor.service';
+import { ResgitroUsuarioComponent } from './componentes/resgitroUsuario/resgitroUsuario.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserInterceptorService } from './interceptores/UserInterceptor.service'
     FormularioComponent,
     EstrellasComponent,
     EditarAutoComponent,
+    ResgitroUsuarioComponent
    
   ],
   imports: [

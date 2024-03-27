@@ -4,47 +4,52 @@
   </div>
   <form [formGroup]="formulario">
     <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="staticCodigo" name="codigo" formControlName="codigo">
-      <label for="staticCodigo">Código</label>
+      <input type="text" class="form-control" id="staticCodigo8" name="codigo" formControlName="codigo">
+      <label for="staticCodigo8">Código</label>
       <span class="text-danger" >Valor requerido</span>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="staticCodigo" name="marca" formControlName="marca">
-      <label for="staticCodigo">Marca</label>
+      <input type="text" class="form-control" id="staticCodigo9" name="marca" formControlName="marca">
+      <label for="staticCodigo9">Marca</label>
       <span class="text-danger" >Valor requerido</span>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="staticCodigo" name="modelo" formControlName="modelo">
-      <label for="staticCodigo">Modelo</label>
+      <input type="text" class="form-control" id="staticCodigo10" name="modelo" formControlName="modelo">
+      <label for="staticCodigo10">Modelo</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo11" name="modelo" formControlName="modelo">
+      <label for="staticCodigo11">anio</label>
       <span class="text-danger" >Valor requerido</span>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="staticCodigo" name="kilometraje" formControlName="kilometraje">
-      <label for="staticCodigo">Kilometraje</label>
+      <input type="text" class="form-control" id="staticCodigo12" name="kilometraje" formControlName="kilometraje">
+      <label for="staticCodigo12">Kilometraje</label>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="staticCodigo" name="precio" formControlName="precio">
-      <label for="staticCodigo">Precio</label>
+      <input type="text" class="form-control" id="staticCodigo13" name="precio" formControlName="precio">
+      <label for="staticCodigo13">Precio</label>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="staticCodigo" name="calificacion" formControlName="calificacion">
-      <label for="staticCodigo">Calificación</label>
+      <input type="text" class="form-control" id="staticCodigo14" name="calificacion" formControlName="calificacion">
+      <label for="staticCodigo14">Calificación</label>
       <span class="text-danger" >Valor requerido</span>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="staticCodigo" name="foto" formControlName="foto">
-      <label for="staticCodigo">Imágen Automovil</label>
+      <input type="text" class="form-control" id="staticCodigo15" name="foto" formControlName="foto">
+      <label for="staticCodigo15">Imágen Automovil</label>
     </div>
   </form>
 
   <div class="guardar">
-    <button class="btn btn-dark" (click)="guardar()">Guardar</button>
+    <button class="btn btn-dark" (click)="guardarEdit()">Guardar</button>
   </div>
   <div class="regresar">
     <a class="btn btn-secondary" [routerLink]="['']">Regresar</a>

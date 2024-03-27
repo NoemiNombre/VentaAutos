@@ -21,20 +21,19 @@ constructor(private http: HttpClient) {}
 
 
 
-getAllAutos(filtro?:string,rows?:number,page?:number):Observable<Vehiculo[]> {
+getAllAutos(filtro?:string,rows?:number,page?:number):Observable<Respuesta> {
  let body =new HttpParams();
  body = filtro ? body.set('filtro',filtro) :body;
  body = rows ? body.set('rows',rows) :body;
  body = page ? body.set('page',page) :body;
-  return this.http.get<Respuesta>(this.baseUrl + "vehiculo/",this.httpOptions).pipe(map(respuesta => respuesta.data))
+//  return this.http.get<Respuesta>(this.baseUrl + "vehiculos/",{params: body}).pipe(map(respuesta => respuesta.data))
+  return this.http.get<Respuesta>(this.baseUrl + "vehiculos/",{params: body})
 }
 
 
 insertVehiculo(auto:Vehiculo){
-  return this.http.post<Respuesta>(this.baseUrl+"vehiculo/",auto,this.httpOptions);
+  return this.http.post<Respuesta>(this.baseUrl+"vehiculo/",auto);
   };
-
-  
 
 
 getAutoById(codigo:string){
@@ -108,9 +107,14 @@ deleteAuto(codigo:string){
 
 // ]
 }
+
 export interface Respuesta{
 codigo: string;
 mensaje:string;
 data:Array<Vehiculo>|Vehiculo|any;
+rows:number;
+pages:number;
+records:number;
+page:number;
 
 }

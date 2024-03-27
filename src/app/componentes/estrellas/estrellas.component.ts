@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, input } from '@angular/core';
+import { Vehiculo } from '../../servicios/automoviles/automoviles.interface';
 
 @Component({
   selector: 'app-estrellas',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 })
 export class EstrellasComponent implements OnInit, OnChanges {
 
-  @Input() calificacion:number = 0;
+  @Input() calificacion:any = 0;
   @Output() accionClick = new EventEmitter<any>();
 
   lista:Array<any>=[];

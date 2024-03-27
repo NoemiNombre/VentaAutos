@@ -44,6 +44,8 @@ export class FormularioComponent implements OnInit {
     if (this.formulario.valid) {
       this.autoService.insertVehiculo({ ...this.formulario.value }).subscribe(
         respuesta => {
+          console.log(respuesta);
+          
           if (respuesta.codigo == '1') {
             Swal.fire({
               title: "Mensaje",
@@ -54,6 +56,8 @@ export class FormularioComponent implements OnInit {
         }
       );
     } else {
+    console.log(this.formulario);
+    
       Swal.fire({
         title: "Mensaje",
         text: "Faltan llenar campos",

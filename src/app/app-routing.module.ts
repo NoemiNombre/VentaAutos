@@ -7,6 +7,8 @@ import { NotFoundComponent } from './componentes/notFound/notFound.component';
 import { HomepageComponent } from './paginas/homepage/homepage.component';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
 import { EditarAutoComponent } from './componentes/editar-auto/editar-auto.component';
+import { registerLocaleData } from '@angular/common';
+import { ResgitroUsuarioComponent } from './componentes/resgitroUsuario/resgitroUsuario.component';
 
 const routes: Routes =
   [
@@ -19,17 +21,22 @@ const routes: Routes =
       component: ListaAutosComponent
     },
     {
+      path: 'vehiculo/registrase',
+      component: ResgitroUsuarioComponent
+    },
+    {
       path: 'vehiculo/nuevo',
       component: FormularioComponent
     },
     {
-      path:'vehiculo/editar',
+      path:'vehiculo/editar/:codigo',
       component: EditarAutoComponent
     },
     {
       path: 'vehiculo/:codigo',
       component: AutosDetailComponent
     },
+    
     
     {
       path: '**',
