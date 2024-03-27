@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-resgitroUsuario',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resgitroUsuario.component.css']
 })
 export class ResgitroUsuarioComponent implements OnInit {
-
+form:any = []
   constructor() { }
 
   ngOnInit() {
   }
 
+contacto(){
+
 }
+
+  registrar(){
+    Swal.fire({
+      title: "Exito",
+      text: "Cliente registrado",
+      icon: "success"
+    });
+  }
+}
+

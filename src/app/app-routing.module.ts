@@ -21,7 +21,7 @@ const routes: Routes =
       component: ListaAutosComponent
     },
     {
-      path: 'vehiculo/registrase',
+      path: 'clientes',
       component: ResgitroUsuarioComponent
     },
     {

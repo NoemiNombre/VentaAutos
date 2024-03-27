@@ -23,9 +23,9 @@ export class AutosDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params =>{
-      // this.autoService.getAllAutos(params['codigo']).subscribe(data =>{
-      //   this.vehiculo = data
-      // })
+      this.autoService.getAutoById(params['codigo']).subscribe(data =>{
+        this.vehiculo = data.data
+      })
     })
   }
 

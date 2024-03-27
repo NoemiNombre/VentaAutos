@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Vehiculo} from '../../servicios/automoviles/automoviles.interface';
+
 import { AutomovilesService } from '../../servicios/automoviles/automoviles.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
@@ -13,7 +13,6 @@ import Swal from 'sweetalert2';
 })
 export class FormularioComponent implements OnInit {
 
-  // automovil: Automovil
   formulario: FormGroup 
 
   constructor(
@@ -41,6 +40,8 @@ export class FormularioComponent implements OnInit {
   }
 
   guardar() {
+    console.log(this.formulario);
+    
     if (this.formulario.valid) {
       this.autoService.insertVehiculo({ ...this.formulario.value }).subscribe(
         respuesta => {
